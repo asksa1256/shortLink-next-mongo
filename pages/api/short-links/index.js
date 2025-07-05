@@ -1,8 +1,37 @@
 import dbConnect from "@/db/dbConnect";
 import mongoose from "mongoose";
+import ShortLink from "@/db/models/ShortLink";
 
 export default async function handler(req, res) {
   await dbConnect();
-  console.log(mongoose.connection.readyState);
-  return res.send("안녕 API!");
+
+  switch (req.method) {
+    case "GET":
+      res.send([
+        {
+          id: "abc",
+          title: "위키피디아 Next.js",
+          url: "https://en.wikipedia.org/wiki/Next.js",
+        },
+        {
+          id: "def",
+          title: "코드잇 자유게시판",
+          url: "https://codeit.kr/community/general",
+        },
+        {
+          id: "ghi",
+          title: "코드잇 질문답변",
+          url: "https://www.codeit.kr/community/questions",
+        },
+      ]);
+      break;
+    case "POST":
+      const newShortLink = await ShortLink.create(req.body);
+      res.status(201).send(newShortLink);
+      break;
+    default:
+      res.status(404).send();
+  }
+
+  // return res.send("안녕 API!");
 }

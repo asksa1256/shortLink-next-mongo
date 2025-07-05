@@ -3,17 +3,20 @@
 # GET http://localhost:3000/api/short-links/123?q=hi 
 # 위와 같이 요청을 보내면 응답으로 params(123)와 쿼리 스트링(hi)가 하나의 객체로 같이 묶여서 반환됨
 
-# POST http://localhost:3000/api/short-links/123
+# POST http://localhost:3000/api/short-links/
 # Content-Type: application/json
 
 # {
-#   "title": "shortit"
+#   "title": "shortit",
+#   "url": "https://codeit.kr"
 # }
+
+GET http://localhost:3000/api/short-links/68692204471e569adcb31319
 
 # GET http://localhost:3000/api/short-links/123
 # Cookie: session-id=cookie123
 
-GET http://localhost:3000/api/qrcodes
+# GET http://localhost:3000/api/qrcodes
 # POST http://localhost:3000/api/qrcodes
 # PATCH http://localhost:3000/api/qrcodes
 # GET http://localhost:3000/api/qrcodes/abc
