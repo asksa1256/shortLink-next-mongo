@@ -9,8 +9,8 @@
  */
 (() => {
 var exports = {};
-exports.id = "pages/api/qrcodes";
-exports.ids = ["pages/api/qrcodes"];
+exports.id = "pages/api/qrcodes/[id]";
+exports.ids = ["pages/api/qrcodes/[id]"];
 exports.modules = {
 
 /***/ "mongoose":
@@ -43,13 +43,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "(api)/./pages/api/qrcodes/index.js":
-/*!************************************!*\
-  !*** ./pages/api/qrcodes/index.js ***!
-  \************************************/
+/***/ "(api)/./pages/api/qrcodes/[id].js":
+/*!***********************************!*\
+  !*** ./pages/api/qrcodes/[id].js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ handler)\n/* harmony export */ });\n/* harmony import */ var _db_dbConnect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/db/dbConnect */ \"(api)/./db/dbConnect.ts\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _db_models_QRCode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/db/models/QRCode */ \"(api)/./db/models/QRCode.ts\");\n\n\n\nasync function handler(req, res) {\n    await (0,_db_dbConnect__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    // console.log(mongoose.connection.readyState);\n    // const props = Object.keys(QRCode.schema.paths);\n    // console.log(props);\n    const { id  } = req.query;\n    switch(req.method){\n        case \"GET\":\n            const qrcodes = await _db_models_QRCode__WEBPACK_IMPORTED_MODULE_2__[\"default\"].find();\n            res.send(qrcodes);\n            break;\n        case \"POST\":\n            const newQrcode = await _db_models_QRCode__WEBPACK_IMPORTED_MODULE_2__[\"default\"].create(req.body);\n            res.status(201).send(newQrcode);\n            break;\n        default:\n            res.status(404).send();\n    }\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9wYWdlcy9hcGkvcXJjb2Rlcy9pbmRleC5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUF1QztBQUNQO0FBQ1E7QUFFekIsZUFBZUcsUUFBUUMsR0FBRyxFQUFFQyxHQUFHO0lBQzVDLE1BQU1MLHlEQUFTQTtJQUNmLCtDQUErQztJQUMvQyxrREFBa0Q7SUFDbEQsc0JBQXNCO0lBQ3RCLE1BQU0sRUFBRU0sR0FBRSxFQUFFLEdBQUdGLElBQUlHO0lBRW5CLE9BQVFILElBQUlJO1FBQ1YsS0FBSztZQUNILE1BQU1DLFVBQVUsTUFBTVAsOERBQVdRO1lBQ2pDTCxJQUFJTSxLQUFLRjtZQUNUO1FBRUYsS0FBSztZQUNILE1BQU1HLFlBQVksTUFBTVYsZ0VBQWFXLENBQUNULElBQUlVO1lBQzFDVCxJQUFJVSxPQUFPLEtBQUtKLEtBQUtDO1lBQ3JCO1FBRUY7WUFDRVAsSUFBSVUsT0FBTyxLQUFLSjtJQUNwQjtBQUNGIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vc2hvcnRpdC8uL3BhZ2VzL2FwaS9xcmNvZGVzL2luZGV4LmpzPzAyZDAiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGRiQ29ubmVjdCBmcm9tIFwiQC9kYi9kYkNvbm5lY3RcIjtcclxuaW1wb3J0IG1vbmdvb3NlIGZyb20gXCJtb25nb29zZVwiO1xyXG5pbXBvcnQgUVJDb2RlIGZyb20gXCJAL2RiL21vZGVscy9RUkNvZGVcIjtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGFzeW5jIGZ1bmN0aW9uIGhhbmRsZXIocmVxLCByZXMpIHtcclxuICBhd2FpdCBkYkNvbm5lY3QoKTtcclxuICAvLyBjb25zb2xlLmxvZyhtb25nb29zZS5jb25uZWN0aW9uLnJlYWR5U3RhdGUpO1xyXG4gIC8vIGNvbnN0IHByb3BzID0gT2JqZWN0LmtleXMoUVJDb2RlLnNjaGVtYS5wYXRocyk7XHJcbiAgLy8gY29uc29sZS5sb2cocHJvcHMpO1xyXG4gIGNvbnN0IHsgaWQgfSA9IHJlcS5xdWVyeTtcclxuXHJcbiAgc3dpdGNoIChyZXEubWV0aG9kKSB7XHJcbiAgICBjYXNlIFwiR0VUXCI6XHJcbiAgICAgIGNvbnN0IHFyY29kZXMgPSBhd2FpdCBRUkNvZGUuZmluZCgpO1xyXG4gICAgICByZXMuc2VuZChxcmNvZGVzKTtcclxuICAgICAgYnJlYWs7XHJcblxyXG4gICAgY2FzZSBcIlBPU1RcIjpcclxuICAgICAgY29uc3QgbmV3UXJjb2RlID0gYXdhaXQgUVJDb2RlLmNyZWF0ZShyZXEuYm9keSk7XHJcbiAgICAgIHJlcy5zdGF0dXMoMjAxKS5zZW5kKG5ld1FyY29kZSk7XHJcbiAgICAgIGJyZWFrO1xyXG5cclxuICAgIGRlZmF1bHQ6XHJcbiAgICAgIHJlcy5zdGF0dXMoNDA0KS5zZW5kKCk7XHJcbiAgfVxyXG59XHJcbiJdLCJuYW1lcyI6WyJkYkNvbm5lY3QiLCJtb25nb29zZSIsIlFSQ29kZSIsImhhbmRsZXIiLCJyZXEiLCJyZXMiLCJpZCIsInF1ZXJ5IiwibWV0aG9kIiwicXJjb2RlcyIsImZpbmQiLCJzZW5kIiwibmV3UXJjb2RlIiwiY3JlYXRlIiwiYm9keSIsInN0YXR1cyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./pages/api/qrcodes/index.js\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ handler)\n/* harmony export */ });\n/* harmony import */ var _db_dbConnect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/db/dbConnect */ \"(api)/./db/dbConnect.ts\");\n/* harmony import */ var _db_models_QRCode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/db/models/QRCode */ \"(api)/./db/models/QRCode.ts\");\n\n\nasync function handler(req, res) {\n    await (0,_db_dbConnect__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    const { id  } = req.query;\n    switch(req.method){\n        case \"GET\":\n            const qrCode = await _db_models_QRCode__WEBPACK_IMPORTED_MODULE_1__[\"default\"].findById(id);\n            res.send(qrCode);\n            break;\n        case \"PATCH\":\n            const updateQrcode = await _db_models_QRCode__WEBPACK_IMPORTED_MODULE_1__[\"default\"].findByIdAndUpdate(id, req.body, {\n                new: true\n            });\n            res.send(updateQrcode);\n            break;\n        case \"DELETE\":\n            await _db_models_QRCode__WEBPACK_IMPORTED_MODULE_1__[\"default\"].findByIdAndDelete(id);\n            res.status(204).send();\n            break;\n        default:\n            res.status(404).send();\n            break;\n    }\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9wYWdlcy9hcGkvcXJjb2Rlcy9baWRdLmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUF1QztBQUNDO0FBRXpCLGVBQWVFLFFBQVFDLEdBQUcsRUFBRUMsR0FBRztJQUM1QyxNQUFNSix5REFBU0E7SUFDZixNQUFNLEVBQUVLLEdBQUUsRUFBRSxHQUFHRixJQUFJRztJQUVuQixPQUFRSCxJQUFJSTtRQUNWLEtBQUs7WUFDSCxNQUFNQyxTQUFTLE1BQU1QLGtFQUFlUSxDQUFDSjtZQUNyQ0QsSUFBSU0sS0FBS0Y7WUFDVDtRQUVGLEtBQUs7WUFDSCxNQUFNRyxlQUFlLE1BQU1WLDJFQUF3QlcsQ0FBQ1AsSUFBSUYsSUFBSVUsTUFBTTtnQkFDaEVDLEtBQUs7WUFDUDtZQUNBVixJQUFJTSxLQUFLQztZQUNUO1FBRUYsS0FBSztZQUNILE1BQU1WLDJFQUF3QmMsQ0FBQ1Y7WUFDL0JELElBQUlZLE9BQU8sS0FBS047WUFDaEI7UUFFRjtZQUNFTixJQUFJWSxPQUFPLEtBQUtOO1lBQ2hCO0lBQ0o7QUFDRiIsInNvdXJjZXMiOlsid2VicGFjazovL3Nob3J0aXQvLi9wYWdlcy9hcGkvcXJjb2Rlcy9baWRdLmpzP2Y5NWMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGRiQ29ubmVjdCBmcm9tIFwiQC9kYi9kYkNvbm5lY3RcIjtcclxuaW1wb3J0IFFSQ29kZSBmcm9tIFwiQC9kYi9tb2RlbHMvUVJDb2RlXCI7XHJcblxyXG5leHBvcnQgZGVmYXVsdCBhc3luYyBmdW5jdGlvbiBoYW5kbGVyKHJlcSwgcmVzKSB7XHJcbiAgYXdhaXQgZGJDb25uZWN0KCk7XHJcbiAgY29uc3QgeyBpZCB9ID0gcmVxLnF1ZXJ5O1xyXG5cclxuICBzd2l0Y2ggKHJlcS5tZXRob2QpIHtcclxuICAgIGNhc2UgXCJHRVRcIjpcclxuICAgICAgY29uc3QgcXJDb2RlID0gYXdhaXQgUVJDb2RlLmZpbmRCeUlkKGlkKTtcclxuICAgICAgcmVzLnNlbmQocXJDb2RlKTtcclxuICAgICAgYnJlYWs7XHJcblxyXG4gICAgY2FzZSBcIlBBVENIXCI6XHJcbiAgICAgIGNvbnN0IHVwZGF0ZVFyY29kZSA9IGF3YWl0IFFSQ29kZS5maW5kQnlJZEFuZFVwZGF0ZShpZCwgcmVxLmJvZHksIHtcclxuICAgICAgICBuZXc6IHRydWUsXHJcbiAgICAgIH0pO1xyXG4gICAgICByZXMuc2VuZCh1cGRhdGVRcmNvZGUpO1xyXG4gICAgICBicmVhaztcclxuXHJcbiAgICBjYXNlIFwiREVMRVRFXCI6XHJcbiAgICAgIGF3YWl0IFFSQ29kZS5maW5kQnlJZEFuZERlbGV0ZShpZCk7XHJcbiAgICAgIHJlcy5zdGF0dXMoMjA0KS5zZW5kKCk7XHJcbiAgICAgIGJyZWFrO1xyXG5cclxuICAgIGRlZmF1bHQ6XHJcbiAgICAgIHJlcy5zdGF0dXMoNDA0KS5zZW5kKCk7XHJcbiAgICAgIGJyZWFrO1xyXG4gIH1cclxufVxyXG4iXSwibmFtZXMiOlsiZGJDb25uZWN0IiwiUVJDb2RlIiwiaGFuZGxlciIsInJlcSIsInJlcyIsImlkIiwicXVlcnkiLCJtZXRob2QiLCJxckNvZGUiLCJmaW5kQnlJZCIsInNlbmQiLCJ1cGRhdGVRcmNvZGUiLCJmaW5kQnlJZEFuZFVwZGF0ZSIsImJvZHkiLCJuZXciLCJmaW5kQnlJZEFuZERlbGV0ZSIsInN0YXR1cyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./pages/api/qrcodes/[id].js\n");
 
 /***/ })
 
@@ -57,10 +57,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 ;
 
 // load runtime
-var __webpack_require__ = require("../../webpack-api-runtime.js");
+var __webpack_require__ = require("../../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/qrcodes/index.js"));
+var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/qrcodes/[id].js"));
 module.exports = __webpack_exports__;
 
 })();

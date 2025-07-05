@@ -10,10 +10,12 @@ export default async function handler(req, res) {
       const shortLinks = await ShortLink.find();
       res.send(shortLinks);
       break;
+
     case "POST":
       const newShortLink = await ShortLink.create(req.body);
       res.status(201).send(newShortLink);
       break;
+
     default:
       res.status(404).send();
   }
